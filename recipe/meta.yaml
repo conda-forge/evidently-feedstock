@@ -1,5 +1,5 @@
 {% set name = "evidently" %}
-{% set version = "0.1.22.dev0" %}
+{% set version = "0.1.23.dev0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/evidentlyai/{{ name }}/archive/refs/tags/{{ version }}.tar.gz
-  sha256: cef9cab23cb9ecf8ce4de44d336f69b4788fec2caccc1500ae3d65702d58357c
+  sha256: 836d3755ae60bdb918601e53757368537723e266ea23964208a0a4afcef5745e
 
 build:
   number: 0
@@ -28,7 +28,7 @@ requirements:
     - pyyaml
     - requests
     - scikit-learn >=0.22.1
-    - scipy
+    - scipy <=1.6.3
     - statsmodels
 
 test:
