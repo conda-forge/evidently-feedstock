@@ -1,5 +1,5 @@
 {% set name = "evidently" %}
-{% set version = "0.2.1" %}
+{% set version = "0.2.2" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/evidentlyai/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: e3bda2987d05e4de471fbfc6e11f45ca263fe0dfc47bf09078de423a55a9d72d
+  sha256: 67458e23c9b1c4c45168d81a04e1c2af169e8cd756ff183da58845d05fcad756
 
 build:
   number: 0
@@ -21,8 +21,9 @@ requirements:
     - python >=3.6
   run:
     - dataclasses >=0.6
+    - nltk >=3.6.7
     - numpy >=1.19.5
-    - pandas >=1.1.5
+    - pandas >=1.3.5
     - plotly >=5.5.0
     - python >=3.6
     - pyyaml ~=5.1
