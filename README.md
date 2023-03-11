@@ -1,11 +1,11 @@
-About evidently
-===============
+About evidently-feedstock
+=========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/evidently-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/evidentlyai/evidently
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/evidently-feedstock/blob/main/LICENSE.txt)
 
 Summary: Analyze, monitor, and debug machine learning model in production.
 
