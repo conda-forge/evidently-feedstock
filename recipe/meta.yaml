@@ -39,7 +39,7 @@ requirements:
     - scikit-learn >=0.24.0
     - scipy >=1.5.4
     - statsmodels >=0.12.2
-    - typer >=0.9
+    - typer >=0.3
     - uvicorn >=0.22.0
     - watchdog >=3
 
