@@ -1,5 +1,5 @@
 {% set name = "evidently" %}
-{% set version = "0.4.10" %}
+{% set version = "0.4.11" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/evidentlyai/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 4a8036ff48736cc832348ef491a33f4352971d5e146c5ccdee65577ca7f264f0
+  sha256: 3c4011f978daf8640997a71f2e12a55d99df836b2e319febb713d3412a9f70b3
 
 build:
   number: 0
