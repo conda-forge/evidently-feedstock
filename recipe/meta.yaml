@@ -43,7 +43,7 @@ requirements:
     - fsspec
 # from https://github.com/pandas-dev/pandas/blob/main/pyproject.toml
 # parquet = ['pyarrow>=10.0.1']
-    - pyarrow>=10.0.1
+    - pyarrow >=10.0.1
 
 test:
   imports:
