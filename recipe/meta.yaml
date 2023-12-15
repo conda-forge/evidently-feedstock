@@ -1,26 +1,25 @@
 {% set name = "evidently" %}
-{% set version = "0.4.10" %}
-
+{% set version = "0.4.11" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/evidentlyai/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 4a8036ff48736cc832348ef491a33f4352971d5e146c5ccdee65577ca7f264f0
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/evidently-{{ version }}.tar.gz
+  sha256: edf7403b3d881395f24ceb48664a771ccd2e7accd107e125b1677064bf9b44a5
 
 build:
-  number: 0
-  noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - evidently=evidently.cli:app
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
 
 requirements:
   host:
-    - pip
     - python >=3.7
+    - pip
   run:
     - python >=3.7
     - plotly >=5.5.0
@@ -41,7 +40,10 @@ requirements:
     - typer >=0.3
     - rich >=13
     - iterative-telemetry >=0.0.5
-    - pyarrow <11.0dev
+    - fsspec
+# from https://github.com/pandas-dev/pandas/blob/main/pyproject.toml
+# parquet = ['pyarrow>=10.0.1']
+    - pyarrow >=10.0.1
 
 test:
   imports:
