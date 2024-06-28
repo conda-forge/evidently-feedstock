@@ -1,5 +1,5 @@
 {% set name = "evidently" %}
-{% set version = "0.4.29" %}
+{% set version = "0.4.30" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/evidently-{{ version }}.tar.gz
-  sha256: ee4bb526e1bf2f54f625b55d1138299d8353be740fa5b7783b3930edd9329242
+  sha256: afa7a310154c8e5d4e3e5fe9d2b976e3e0c8fe06078e81fd313074213dde1c1f
 
 build:
   entry_points:
@@ -41,7 +41,7 @@ requirements:
     - iterative-telemetry >=0.0.5
     - dynaconf >=3.2.4
     - certifi >=2023.07.22
-    - urllib3 >=1.26.18
+    - urllib3 >=1.26.19
     - fsspec >=2024.2.0
     - ujson >=5.4.0
 # from https://github.com/pandas-dev/pandas/blob/main/pyproject.toml
