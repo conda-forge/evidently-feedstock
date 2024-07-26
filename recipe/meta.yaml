@@ -1,5 +1,5 @@
 {% set name = "evidently" %}
-{% set version = "0.4.30" %}
+{% set version = "0.4.31" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/evidently-{{ version }}.tar.gz
-  sha256: afa7a310154c8e5d4e3e5fe9d2b976e3e0c8fe06078e81fd313074213dde1c1f
+  sha256: 8a6245f80ee877592e79a4f82c319a52e5e7d4e34f6a434327258769fcf9ed1c
 
 build:
   entry_points:
@@ -35,15 +35,20 @@ requirements:
     - litestar >=2.8.3
     - typing_inspect >=0.9.0
     - uvicorn-standard >=0.22.0
-    - watchdog >=3
+    - watchdog >=3.0.0
     - typer >=0.3
     - rich >=13
     - iterative-telemetry >=0.0.5
     - dynaconf >=3.2.4
-    - certifi >=2023.07.22
+    - certifi >=2024.07.4
     - urllib3 >=1.26.19
     - fsspec >=2024.2.0
     - ujson >=5.4.0
+    - opentelemetry-api >=1.25.0
+    - opentelemetry-sdk >=1.25.0
+    - opentelemetry-proto >=1.25.0
+    - opentelemetry-exporter-otlp-proto-grpc >=1.25.0
+    - opentelemetry-exporter-otlp-proto-http >=1.25.0
 # from https://github.com/pandas-dev/pandas/blob/main/pyproject.toml
 # parquet = ['pyarrow>=10.0.1']
     - pyarrow >=10.0.1
