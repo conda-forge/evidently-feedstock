@@ -47,6 +47,7 @@ requirements:
     - ujson >=5.4.0
     - deprecation >=2.1.0
     - cryptography >=43.0.1
+    - uuid6 >=2024.7.10
 # from https://github.com/pandas-dev/pandas/blob/main/pyproject.toml
 # parquet = ['pyarrow>=10.0.1']
     - pyarrow >=10.0.1
