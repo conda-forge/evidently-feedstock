@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/evidently-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/evidently-{{ version }}.tar.gz
   sha256: 590cdc0eb6d6e4f3b42db5509562f15a04193e23a7c86252422b109057fb341b
 
 build:
@@ -18,11 +18,11 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - plotly >=5.10.0
     - statsmodels >=0.12.2
     - scikit-learn >=1.0.1
@@ -61,6 +61,7 @@ test:
     - evidently --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/evidentlyai/evidently
