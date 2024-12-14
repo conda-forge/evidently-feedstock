@@ -41,7 +41,7 @@ requirements:
     - rich >=13
     - iterative-telemetry >=0.0.5
     - dynaconf >=3.2.4
-    - certifi >=2024.07.4
+    - certifi >=2024.7.4
     - urllib3 >=1.26.19
     - fsspec >=2024.6.1
     - ujson >=5.4.0
