@@ -1,5 +1,5 @@
 {% set name = "evidently" %}
-{% set version = "0.6.7" %}
+{% set version = "0.7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/evidently-{{ version }}.tar.gz
-  sha256: c12e140f682e8bd9cb1312275bfaf065f82e9d31eecd95a23e6941154db68f90
+  sha256: 0f837f730be6ffdfea6977945878c7f86405cacdd8c8b6b1ad712cf4a13e5db3
 
 build:
   entry_points:
-    - evidently=evidently.cli:app
+    - evidently=evidently.legacy.cli:app
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
@@ -32,7 +32,7 @@ requirements:
     - scipy >=1.10.0
     - requests >=2.32.0
     - pyyaml >=5.4
-    - pydantic >=1.10.13
+    - pydantic >=1.10.16
     - litestar >=2.8.3
     - typing_inspect >=0.9.0
     - uvicorn-standard >=0.22.0
