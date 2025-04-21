@@ -1,5 +1,5 @@
 {% set name = "evidently" %}
-{% set version = "0.7.0" %}
+{% set version = "0.7.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/evidently-{{ version }}.tar.gz
-  sha256: 0f837f730be6ffdfea6977945878c7f86405cacdd8c8b6b1ad712cf4a13e5db3
+  sha256: c3e26036c9a621077cbd9c95aa124ae9778fc9b0f173aa437220e13cbee00af7
 
 build:
   entry_points:
