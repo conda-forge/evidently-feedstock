@@ -1,28 +1,32 @@
-{% set name = "evidently" %}
-{% set version = "0.7.1" %}
+schema_version: 1
+
+context:
+  name: evidently
+  version: 0.7.1
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: ${{ name|lower }}
+  version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/evidently-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/evidently-${{ version }}.tar.gz
   sha256: c3e26036c9a621077cbd9c95aa124ae9778fc9b0f173aa437220e13cbee00af7
 
 build:
-  entry_points:
-    - evidently=evidently.legacy.cli:app
-  noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  python:
+    entry_points:
+      - evidently=evidently.legacy.cli:app
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python ${{ python_min }}.*
     - pip
     - setuptools
   run:
-    - python >={{ python_min }}
+    - python >=${{ python_min }}
     - plotly >=5.10.0,<6
     - statsmodels >=0.12.2
     - scikit-learn >=1.0.1
@@ -52,23 +56,24 @@ requirements:
     # for pandas-parquet we need pyarrow>=10.0.1
     - pyarrow >=10.0.1
 
-test:
-  imports:
-    - evidently
-  commands:
-    # Skip pip check for now due to it unalbe to detect uuid6 version
-    # - pip check
-    - evidently --help
-  requires:
-    - pip
-    - python {{ python_min }}
+tests:
+  - python:
+      imports:
+        - evidently
+      pip_check: true
+      python_version: ${{ python_min }}.*
+  - requirements:
+      run:
+        - python ${{ python_min }}.*
+    script:
+      - evidently --help
 
 about:
-  home: https://github.com/evidentlyai/evidently
-  doc_url: https://docs.evidentlyai.com/
   summary: Analyze, monitor, and debug machine learning model in production.
   license: Apache-2.0
   license_file: LICENSE
+  homepage: https://github.com/evidentlyai/evidently
+  documentation: https://docs.evidentlyai.com/
 
 extra:
   recipe-maintainers:
