@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: evidently
-  version: "0.7.10"
+  version: "0.7.11"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/evidently-${{ version }}.tar.gz
-  sha256: f975123d39a86d8962478583edec5e09f7a5412ef4e8ab342d6cb470ad90df77
+  sha256: d49cb381b0be651307dee0a9a00b5e4980e52e42932b6dcaf5adba487fa3852e
 
 build:
   number: 0
