@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: evidently
-  version: "0.7.16"
+  version: "0.7.17"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/evidently-${{ version }}.tar.gz
-  sha256: db2805da6c5bbb9b7e6cd2e24ea439ea9b4375f41462bf29b2640505fccc7b08
+  sha256: 229a740ebec09164ea67f4287acaf4013084d5478e74a6bf91bfb17216eb16bf
 
 build:
   number: 0
@@ -50,8 +50,9 @@ requirements:
     - fsspec >=2024.6.1
     - ujson >=5.4.0
     - deprecation >=2.1.0
-    - cryptography >=43.0.1
     - uuid6 >=2024.7.10
+    - cryptography >=43.0.1
+    - opentelemetry-proto
     # from https://github.com/pandas-dev/pandas/blob/main/pyproject.toml
     # for pandas-parquet we need pyarrow>=10.0.1
     - pyarrow >=10.0.1
