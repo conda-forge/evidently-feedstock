@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: evidently
-  version: "0.7.17"
+  version: "0.7.18"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/evidently-${{ version }}.tar.gz
-  sha256: 229a740ebec09164ea67f4287acaf4013084d5478e74a6bf91bfb17216eb16bf
+  sha256: b4202570676b3a5f1b696cb8eb4249a2cdd7d195f1d188d05c4b87e9507f7a3e
 
 build:
   number: 0
@@ -37,7 +37,7 @@ requirements:
     - requests >=2.32.0
     - pyyaml >=5.4
     - pydantic >=1.10.16
-    - litestar >=2.8.3
+    - litestar >=2.19.0
     - typing_inspect >=0.9.0
     - uvicorn-standard >=0.22.0
     - watchdog >=3.0.0
