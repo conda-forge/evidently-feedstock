@@ -24,7 +24,7 @@ requirements:
   host:
     - python ${{ python_min }}.*
     - pip
-    - setuptools
+    - hatchling
   run:
     - python >=${{ python_min }}
     - plotly >=5.10.0,<6
