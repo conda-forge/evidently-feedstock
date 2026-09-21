@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: evidently
-  version: "0.7.21"
+  version: "0.7.23"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/evidently-${{ version }}.tar.gz
-  sha256: f13c415d749dd73825bd1ec485136eaf9261b3794d765d2844718b7ffe167998
+  sha256: 90ed736a85581c46410647dd3c1c957531c77231bb415e1021512238b12d5870
 
 build:
   number: 0
@@ -28,14 +28,14 @@ requirements:
   run:
     - python >=${{ python_min }}
     - plotly >=5.10.0,<6
-    - statsmodels >=0.12.2
+    - statsmodels >=0.14.0
     - scikit-learn >=1.1.1
     - pandas >=1.3.5
-    - numpy >=1.22.0
+    - numpy >=1.23.0
     - nltk >=3.6.7
     - scipy >=1.10.0
     - requests >=2.32.0
-    - pyyaml >=5.4
+    - pyyaml >=6.0.1
     - pydantic >=1.10.16
     - litestar >=2.19.0
     - typing_inspect >=0.9.0
@@ -47,7 +47,7 @@ requirements:
     - dynaconf >=3.2.4
     - certifi >=2024.7.4
     - urllib3 >=1.26.19
-    - fsspec >=2024.6.1
+    - fsspec >=2024.9.0
     - ujson >=5.4.0
     - deprecation >=2.1.0
     - uuid6 >=2024.7.10
@@ -62,7 +62,9 @@ tests:
       imports:
         - evidently
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
   - requirements:
       run:
         - python ${{ python_min }}.*
